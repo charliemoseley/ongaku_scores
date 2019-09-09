@@ -1,0 +1,18 @@
+<h1>Welcome to ongaku.io</h1>
+<p>Aren't I pretty?</p>
+<% if !current_user %>
+  <a href="/login">Sign in with Discord</a>
+<% else %>
+  <a href="/logout">Sign out</a>
+<% end %>
+<hr />
+
+
+<% if current_user %>
+  <% current_user.attributes.each do |k, v| %>
+    <b><%= k %>:</b> <%= v %> <br>
+  <% end %>
+  <hr />
+  <img src="<%= current_user.attributes['picture'] %>" />
+  <hr />
+<% end %>
