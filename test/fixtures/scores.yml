@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  song: one
+  game: MyString
+  letter_grade: MyString
+  main_score: 1
+  technical_score: 1
+  percentage_score: 1
+  detailed_score: 
+
+two:
+  user: two
+  song: two
+  game: MyString
+  letter_grade: MyString
+  main_score: 1
+  technical_score: 1
+  percentage_score: 1
+  detailed_score: 
