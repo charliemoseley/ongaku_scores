@@ -2,7 +2,7 @@ class CreateSongs < ActiveRecord::Migration[6.0]
   def change
     create_table :songs do |t|
       t.string :game, null: false, index: true
-      t.string :versions, array: true, null: false
+      t.string :versions, array: true, null: false, default: []
       t.string :jp_name
       t.string :en_name
       t.jsonb :scoring

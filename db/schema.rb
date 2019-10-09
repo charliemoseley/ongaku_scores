@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_001739) do
 
   create_table "songs", force: :cascade do |t|
     t.string "game", null: false
-    t.string "versions", null: false, array: true
+    t.string "versions", default: [], null: false, array: true
     t.string "jp_name"
     t.string "en_name"
     t.jsonb "scoring"
