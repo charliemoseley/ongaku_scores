@@ -12,6 +12,7 @@ class PagesController < ApplicationController
       list.each do |song_data|
         song = Song.find_or_initialize_by(game: 'maimai', en_name: song_data['name']['en'], jp_name: song_data['name']['jp'])
         song.scoring = song_data['level']
+        song.image_url = song_data['image_url']
         unless song.versions.include? song_data['version']
           song.versions << song_data['version']
         end

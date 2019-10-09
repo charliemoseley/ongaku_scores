@@ -1,0 +1,39 @@
+<!-- choose a theme file -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.default.min.css">
+<!-- load jQuery and tablesorter scripts -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#song-list").tablesorter();
+    });
+</script>
+
+
+<table id="song-list">
+  <thead>
+    <tr>
+      <th>EN Name</th>
+      <th>JP Name</th>
+      <th>Easy</th>
+      <th>Basic</th>
+      <th>Advanced</th>
+      <th>Master</th>
+      <th>Remaster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.en_name %></td>
+        <td><%= song.jp_name %></td>
+        <td><%= song.scoring['easy'] %></td>
+        <td><%= song.scoring['basic'] %></td>
+        <td><%= song.scoring['advanced'] %></td>
+        <td><%= song.scoring['master'] %></td>
+        <td><%= song.scoring['remaster'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

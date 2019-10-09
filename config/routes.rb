@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
 
   get 'load_data', to: 'pages#load_data'
+  get 'songs', to: 'songs#index'
 
   root 'pages#home'
 end

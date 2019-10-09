@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_001739) do
+ActiveRecord::Schema.define(version: 2019_10_09_010757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_001739) do
     t.jsonb "scoring"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["game", "versions", "en_name"], name: "index_songs_on_game_and_versions_and_en_name"
     t.index ["game", "versions", "jp_name"], name: "index_songs_on_game_and_versions_and_jp_name"
     t.index ["game"], name: "index_songs_on_game"
