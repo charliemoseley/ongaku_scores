@@ -14,6 +14,7 @@
 <table id="song-list">
   <thead>
     <tr>
+      <th></th>
       <th>EN Name</th>
       <th>JP Name</th>
       <th>Easy</th>
@@ -26,6 +27,7 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
+        <td><img src="<%= song.image_url %>" alt="<%= song.en_name %>" /></td>
         <td><%= song.en_name %></td>
         <td><%= song.jp_name %></td>
         <td><%= song.scoring['easy'] %></td>
