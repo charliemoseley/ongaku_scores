@@ -1,7 +1,13 @@
 class SessionsController < ApplicationController
   def create
-    @user = Oauth.find_or_create_from_auth_hash(auth_hash)
-    session[:user_id] = @user.id
+    @oauth = Oauth.find_or_initialize_from_auth_hash(auth_hash)
+    if @oauth.user.blank?
+      @user = User.create
+      @oauth.user = @user
+    end
+    @oauth.save
+
+    session[:user_id] = @oauth.user_id
     redirect_to root_path
   end
 

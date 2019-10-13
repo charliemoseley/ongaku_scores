@@ -9,10 +9,10 @@
 
 
 <% if current_user %>
-  <% current_user.attributes.each do |k, v| %>
+  <% current_user.discord_oauth.attributes.each do |k, v| %>
     <b><%= k %>:</b> <%= v %> <br>
   <% end %>
   <hr />
-  <img src="<%= current_user.attributes['picture'] %>" />
+  <img src="<%= current_user.discord_oauth.attributes['picture'] %>" />
   <hr />
 <% end %>
