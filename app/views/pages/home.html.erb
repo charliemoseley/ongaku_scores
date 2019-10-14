@@ -7,7 +7,6 @@
 <% end %>
 <hr />
 
-
 <% if current_user %>
   <% current_user.discord_oauth.attributes.each do |k, v| %>
     <b><%= k %>:</b> <%= v %> <br>
@@ -15,4 +14,33 @@
   <hr />
   <img src="<%= current_user.discord_oauth.attributes['picture'] %>" />
   <hr />
+  <h2>Scores</h2>
+  <%= link_to 'New Score', new_score_path %>
+  <table>
+    <thead>
+    <tr>
+      <th>User</th>
+      <th>Song</th>
+      <th>Letter Grade</th>
+      <th>Percentage</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= score.user.discord_oauth.username %></td>
+        <td><%= score.song.en_name %></td>
+        <td><%= score.letter_grade %></td>
+        <td><%= score.percentage_score %></td>
+        <td><%= score.main_score %></td>
+        <td><%= link_to 'Show', score %></td>
+        <td><%= link_to 'Edit', edit_score_path(score) %></td>
+        <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>

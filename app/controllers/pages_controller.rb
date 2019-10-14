@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
+    if current_user
+      @scores = Score.where(user: current_user)
+    end
   end
 
   def load_data
