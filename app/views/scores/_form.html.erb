@@ -1,0 +1,41 @@
+<%= form_with(model: score, local: true) do |form| %>
+  <% if score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(score.errors.count, "error") %> prohibited this score from being saved:</h2>
+
+      <ul>
+        <% score.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form">
+    Song
+    <%= form.select :song_id, options_from_collection_for_select(Song.all, :id, :en_name) %>
+  </div>
+
+  <div class="form">
+    Difficulty
+  </div>
+
+  <div class="form">
+    Letter Grade
+    <%= form.text_field :letter_grade %>
+  </div>
+
+  <div class="form">
+    Main Score
+    <%= form.number_field :main_score %>
+  </div>
+
+  <div class="form">
+    Percentage Score
+    <%= form.number_field :percentage_score, { step: '0.01'} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

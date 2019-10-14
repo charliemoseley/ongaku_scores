@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :scores
+
   get 'login', to: redirect('/auth/discord'), as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
