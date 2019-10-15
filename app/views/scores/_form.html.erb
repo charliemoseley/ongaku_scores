@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="form">
+    Image Upload
+    <%= form.file_field :score_image %>
+  </div>
+
+  <div class="form">
     Song
     <%= form.select :song_id, options_from_collection_for_select(Song.all, :id, :en_name) %>
   </div>
