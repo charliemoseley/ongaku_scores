@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_231319) do
+ActiveRecord::Schema.define(version: 2019_10_15_023849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_231319) do
     t.jsonb "detailed_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "difficulty"
     t.index ["game"], name: "index_scores_on_game"
     t.index ["main_score"], name: "index_scores_on_main_score"
     t.index ["percentage_score"], name: "index_scores_on_percentage_score"

@@ -71,6 +71,6 @@ class ScoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def score_params
-      params.fetch(:score, {}).permit(:letter_grade, :song_id, :main_score, :percentage_score)
+      params.fetch(:score, {}).permit(:letter_grade, :song_id, :main_score, :percentage_score, :difficulty)
     end
 end
